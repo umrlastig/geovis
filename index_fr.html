@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -24,10 +24,12 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-    
+    <script src="js/papaparse.min.js"></script>
+    <script src="js/people.js"></script>
+
   </head>
-  <body>
-  
+  <body onload="displayPeopleFr()">
+
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -38,26 +40,26 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-    
+
     <header class="site-navbar py-1" role="banner" style="background-color:lightgray;">
 
       <div class="container">
         <div class="row align-items-center">
-          
+
           <div class="col-6 col-xl-2">
-           
+
             <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">GeoVIS</a></h1><h6 class="text-left">Equipe de recherche en visualisation, interaction et immersion (GEOVIS) </h6>
-            
+
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active">
-                  <a href="index.html">Home</a>
+                  <a href="index.html">Accueil</a>
                 </li>
                 <li class="has-children">
-                  <a href="">News</a>
+                  <a href="">Actualités</a>
                   <ul class="dropdown">
                     <li><a href="http://recherche.ign.fr/lastig/position/2019_LaSTIG_GeoVis_URCLIM_Postdoc.pdf">Post-doc Position</a></li>
                     <li><a href="https://www.tandfonline.com/doi/full/10.1080/23729333.2019.1613071">Papier nouvellement publié</a></li>
@@ -72,17 +74,17 @@
                     </ul>
                   </li>
                   <li class="has-children">
-                    <a href="">la langue</a>
+                    <a href="">Langue</a>
                     <ul class="dropdown">
-                      <li><a href="index.html">English</a></li>
-                      <li><a href="index_fr.html">French</a></li>
-          
+                      <li><a href="index.html">Anglais</a></li>
+                      <li><a href="index_fr.html">Français</a></li>
+
                     </ul>
                   </li>
-                 
-                
-              
-               
+
+
+
+
               </ul>
             </nav>
           </div>
@@ -97,17 +99,17 @@
 
         </div>
       </div>
-      
+
     </header>
 
 
     <h3 class="text-center" style = "margin-top:100px">
         <a href="http://recherche.ign.fr/jr/jr19.php" >Journées de la Recherche 2019</a><a id="posters"></a> GeoVIS PhD's posters:</h3>
     <div class="site-section" style = "margin-top:100px">
-       
+
       <div class="container overlap-section">
         <div class="row">
-          
+
           <div class="col-sm-3 col-md-3">
             <a href="http://recherche.ign.fr/jr/jr19/posters/Poster_Paiz.pdf" class="unit-1 text-center">
               <img src="images/evelyn.png" alt="Image" class="img-fluid">
@@ -142,20 +144,20 @@
           </div>
         </div>
       </div>
-    
+
     </div>
 
 
 
-  
 
 
 
 
-    
+
+
     <div class="site-section block-13 bg-light">
-  
-<h1 class="text-center"><a id="about">About Us</a></h1>
+
+<h1 class="text-center"><a id="about">Présentation</a></h1>
     <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7">
@@ -175,7 +177,7 @@
                 <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
                     <p class=""><h3>&mdash; <em><strong>Visualisation</strong></em> </p>
                   <p class="text-black lead text-justify">&ldquo;intégration et complexité visuelle, abstraction et gestion du niveau de détail (généralisation, symbolisation), représentation graphique (sémiologie graphique, style).&rdquo;</p>
-                 
+
                 </div>
               </div>
             </div>
@@ -189,7 +191,7 @@
                   <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
                       <p class=""><h3>&mdash; <em><strong>Interaction</strong></em> </p>
                     <p class="text-black lead text-justify">&ldquo;Interaction entre l'utilisateur et la visualisation, en fonction du support et du contexte d’utilisation, des tâches de l'utilisateur, et des caractéristiques visuelles ou phénomènes spatialisés à étudier : techniques et modalités d’interaction, continuums de données et de représentations, analyse et apprentissage à partir des traces d’interaction.&rdquo;</p>
-                   
+
                   </div>
                 </div>
               </div>
@@ -204,7 +206,7 @@
                     <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
                         <p class=""><h3>&mdash; <em><strong>Immersion spatiale</strong></em> </p>
                       <p class="text-black lead text-justify">&ldquo; via des dispositifs facilitant la perception visuelle, tactile et sensorielle, et le design des espaces géographiques : réalités virtuelle, augmentée et mixte, cartes tactiles. &rdquo;</p>
-                     
+
                     </div>
                   </div>
                 </div>
@@ -218,7 +220,7 @@
                       <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
                           <p class=""><h3> <em><strong>Problém:</strong></em> </p>
                         <p class="text-black lead text-justify"><strong>&bull; Rendu graphique:</strong> amélioration du rendu physique des images, analyse géométrique et radiométrique, diffusion web de données massives, rendu 3D temps réel</p><p class="text-black lead text-justify"><strong>&bull; Expérimentation utilisateur (UX):</strong> tests visuels, enquêtes, prototypage.</p>
-                       
+
                       </div>
                     </div>
                   </div>
@@ -231,152 +233,13 @@
     <h3 class="text-center" style= "margin-top: 50px;">
       <a id="members">Les membres de l'équipe GEOVIS</a></h3>
   <div class="site-section" style = "margin-top:100px">
-     
+
     <div class="container overlap-section">
-      <div class="row">
-        
-        <div class="col-sm-2 col-md-2">
-            
-            <a href="https://umrlastig.github.io/schristophe_homepage/" class="unit-1 text-center">
-              <img src="images/Sido-back.png" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <h9>Sidonie Christophe</h9>
-                <strong class="text-primary mb-2 d-block">Senior  researcher</strong>
-              </div>
-            </a>
-          
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="http://recherche.ign.fr/labos/matis/~biasutti" class="unit-1 text-center">
-            <img src="images/piere.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Pierre Biasutti</h9>
-              <strong class="text-primary mb-2 d-block">PhD Student</strong>
-            </div>
-          </a>
-      
-          </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="http://recherche.ign.fr/labos/cogit/cv.php?prenom=S%E9bastien&nom=Biniek" class="unit-1 text-center">
-            <img src="images/piere.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Sébastien Biniek</h9>
-              <strong class="text-primary mb-2 d-block">PhD Student</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="https://umrlastig.github.io/mbredif_homepage/" class="unit-1 text-center">
-            <img src="images/mathieu.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Mathieu Brédif</h9>
-              <strong class="text-primary mb-2 d-block">Researcher</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="https://umrlastig.github.io/adevaux_homepage/" class="unit-1 text-center">
-            <img src="images/alex.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Alexandre Devaux</h9>
-              <strong class="text-primary mb-2 d-block">Engineer</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="#" class="unit-1 text-center">
-            <img src="images/piere.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Gauthier Fillières</h9>
-              <strong class="text-primary mb-2 d-block">PhD Student</strong>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="row" style="margin-top: 10px;">
-        
-        <div class="col-sm-2 col-md-2">
-          <a href="#" class="unit-1 text-center">
-            <img src="images/piere.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Clarice Fotso</h9>
-              <strong class="text-primary mb-2 d-block">PhD Student</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="http://www.jacquinod.fr/dokuwiki/doku.php?id=start" class="unit-1 text-center">
-            <img src="images/piere.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Florence Jacquinod</h9>
-              <strong class="text-primary mb-2 d-block">lecturer-researcher</strong>
-            </div>
-          </a>
-          </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="http://recherche.ign.fr/labos/matis/cv.php?prenom=&nom=Lel%E9gard" class="unit-1 text-center">
-            <img src="images/laman.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Laman Lelegard</h9>
-              <strong class="text-primary mb-2 d-block">Engineer</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="https://umrlastig.github.io/ilokhat_homepage/" class="unit-1 text-center">
-            <img src="images/piere.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Imran Lokhat</h9>
-              <strong class="text-primary mb-2 d-block">Engineer</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="https://umrlastig.github.io/epaizreyes_homepage/" class="unit-1 text-center">
-            <img src="images/evelyn.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Evelyn Paiz</h9>
-              <strong class="text-primary mb-2 d-block">PhD Student</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="http://www.pierkot.fr/" class="unit-1 text-center">
-            <img src="images/piere.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Christelle Pierkot</h9>
-              <strong class="text-primary mb-2 d-block">Post-doc</strong>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="row" style="margin-top: 10px;">
-        
-        <div class="col-sm-2 col-md-2">
-          <a href="https://umrlastig.github.io/Safariallahkheili_Homepage/" class="unit-1 text-center">
-            <img src="images/qasem.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Qasem Safariallahkheili</h9>
-              <strong class="text-primary mb-2 d-block">PhD Student</strong>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-2 col-md-2">
-          <a href="https://umrlastig.github.io/gtouya_homepage/" class="unit-1 text-center">
-            <img src="images/touya.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h9>Guillaume Touya</h9>
-              <strong class="text-primary mb-2 d-block">senior researcher</strong>
-            </div>
-          </a>
-          </div>
-       
-       
-       
-       
+      <div class="row"   id="people-container">
+
       </div>
     </div>
-  
+
   </div>
 
 
@@ -446,91 +309,91 @@
 
 
 
-     
+
 
       </div>
     </div>
   </div>
 
     <div class="site-section">
-      
+
       <div class="container">
           <h3 class="text-center" style= "margin-bottom: 30px;">
              <a id="papers"> Publications marquantes depuis 2017</a></h3>
         <table class="table table-hover">
-        
+
           <tbody>
             <tr>
               <th scope="row" class= text-justify><p><h6>&bull; <strong>Biasutti</strong> P., Aujol J.F., <strong>Brédif</strong> M., Bugeau A. <a href="https://www.sciencedirect.com/science/article/pii/S1077314218304302"><em>Diffusion and inpainting of reflectance and height LiDAR orthoimages.</em> </a>Computer Vision and Image Understanding, Elsevier, 2018. doi:10.1016/j.cviu.2018.10.011 (ISSN 1077-3142)</h6></p>
               </th>
-             
+
             </tr>
             <tr>
                 <th scope="row" class= text-justify><p><h6>&bull; <strong>Biasutti</strong> P., Aujol J.F., <strong>Brédif</strong> M., Bugeau A. <a href="https://hal.archives-ouvertes.fr/hal-01756975/file/asprs_2017_range.pdf"><em>Range-Image: Incorporating sensor topology for LiDAR point cloud processing.</em> </a>PE&RS Photogrammetric Engineering & Remote Sensing, ASPRS American Society for Photogrammetry and Remote Sensing, 2018, 84 (6), pp.367--375. <10.14358/PERS.84.6.367>.</h6></p>
                 </th>
-              
+
             </tr>
             <tr>
                 <th scope="row" class= text-justify><p><h6>&bull; <strong>Touya</strong> , G., Berli J., I. Lokhat and N. Regnauld (2017) <a href="https://www.tandfonline.com/doi/abs/10.1080/00087041.2017.1413787?journalCode=ycaj20"><em>Experiments to Distribute and Parallelize Map Generalization Processes.</em> </a>The Cartographic Journal Volume 54, 2017 - Issue 4.</h6></p>
                 </th>
-             
+
             </tr>
             <tr>
                 <th scope="row" class= text-justify><p><h6>&bull; <strong>Devaux</strong>, A., C. Hoarau, M. <strong>Brédif</strong> and S. <strong>Christophe</strong> (2018) <a href="https://www.isprs-ann-photogramm-remote-sens-spatial-inf-sci.net/IV-4/41/2018/"><em>3D urban geovisualization: in situ augmented and mixed reality experiments.</em> </a>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences.</h6></p>
                 </th>
-             
+
             </tr>
             <tr>
                 <th scope="row" class= text-justify><p><h6>&bull; Hoarau C., <strong>Christophe</strong> S. (2017). <a href="https://www.sciencedirect.com/science/article/abs/pii/S0924271616304014"><em>Cartographic continuum rendering based on color and texture interpolation to enhance photo-realism perception.</em> </a> ISPRS Journal of Photogrammetry and Remote Sensing, vol. 127, May 2017, pp. 27-38. http://dx.doi.org/10.1016/j.isprsjprs.2016.09.012</h6></p>
                 </th>
-              
+
             </tr>
             <tr>
                 <th scope="row" class= text-justify><p><h6>&bull; Mellado N., Vanderhaeghe D., Hoarau C., <strong>Christophe</strong> S. <strong>Brédif</strong> M., Barthe L. (2017).  <a href="https://hal.archives-ouvertes.fr/hal-01538733/document"><em>Constrained Palette-Space Exploration.</em> </a> ACM Trans. Graph. 36, 4, Article 0304 (July 2017), 14 pages. http://dx.doi.org/10.1145/3072959.3073650.</h6></p>
                 </th>
-              
+
             </tr>
             <tr>
                 <th scope="row" class= text-justify><p><h6>&bull; <strong>Touya</strong> G.,<strong>Christophe</strong>  S., Ben Rhaiem A., Favreau J.-M. (2018) <a href="https://www.tandfonline.com/doi/abs/10.1080/23729333.2018.1486784"><em>Automatic Derivation of On Demand Tactile Maps for Visually Impaired People: First Experiments and Research Agenda.</em> </a>International Journal of Cartography (TICA) , https://doi.org/10.1080/23729333.2018.1486784
                 </h6></p>
                 </th>
-              
+
             </tr>
           </tbody>
         </table>
-            
+
       </div>
-    
+
     </div>
 
-  
 
-   
-    
 
-       
-  
-    
-  
-    
+
+
+
+
+
+
+
+
     <footer class="site-footer">
-      
+
       <div class="container">
-        
+
         <div class="row pt-1 mt-1 text-center">
           <div class="col-md-6">
-          
+
 
             <p>
-           
+
             Copyright &copy;IGN<script>document.write(new Date().getFullYear());</script> All rights reserved  | <a href="http://recherche.ign.fr/mentions_legales.htm">mentions légales </a><p>This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a></p>
-           
+
             </p>
           </div>
           <div class="col-md-6">
-          
 
-             
+
+
                   <div class="row mb-5">
                     <div class="col-md-12">
                       <h3 class="footer-heading mb-4">Navigation</h3>
@@ -550,9 +413,9 @@
                       </ul>
                     </div>
                   </div>
-      
-           
-          
+
+
+
         </div>
       </div>
     </footer>
@@ -571,6 +434,6 @@
   <script src="js/aos.js"></script>
 
   <script src="js/main.js"></script>
-    
+
   </body>
 </html>

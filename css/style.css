@@ -1162,3 +1162,20 @@ h1, h2, h3, h4, h5,
   @media (max-width: 991.98px) {
     .overlap-left {
       margin-left: 0px; } }
+
+/* Members */
+.img-member{
+  width:100px;
+  height:100px;
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+  width:100px;
+  height:100px
+}
