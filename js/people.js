@@ -34,8 +34,9 @@
                     step: function(row) {
                         //console.log("Row:", row.data);
                         if(row.data[0].firstname.localeCompare("") != 0){
-                          var parent = document.getElementById("people-container");
-                          divForTeamPeople(lang, parent, row.data);}
+                          var parentCur = document.getElementById("people-container");
+                          var parentOld = document.getElementById("people-container-past");
+                          divForTeamPeople(lang, parentCur, parentOld, row.data);}
                     },
                     complete: function() {
                         console.log("All done!");
@@ -47,9 +48,10 @@
     request.send();
   };
 
-  function divForTeamPeople(lang, parentElement, data) {
+  function divForTeamPeople(lang, parentCur, parentOld, data) {
     if(data[0].team=="GEOVIS"){
       const childElement = document.createElement('div');
+      const parentElement = data[0].end_date == '' ? parentCur : parentOld;
       const appendChildElement = parentElement.appendChild(childElement);
       appendChildElement.setAttribute("class","col-lg-2 col-md-6 mb-lg-0 mb-5");
       avatarDivElement = document.createElement('div');
