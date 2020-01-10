@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>LASTIG - GEOVIS - Homepage</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i">
+  <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="vendor/academicons/css/academicons.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="css/resume.css" rel="stylesheet">
+  <link href="css/extras.css" rel="stylesheet">
+
+  <!-- scripts on load -->
+  <!--script src="vendor/d3/d3.min.js"></script-->
+  <script src="js/reviewing.js" charset="utf-8"></script>
+  <script src="js/hal.js" charset="utf-8"></script>
+
+</head>
+
+<body id="page-top" onload="reviewingVis('reviewing.json'); getPublicationsAuthor('acte');">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <select class="selectpicker" data-width="fit">
+      <option data-content='<span class="flag-icon flag-icon-us"></span>'>English</option>
+      <option data-content='<span class="flag-icon flag-icon-fr"></span>'>Français</option>
+    </select>
+    <a class="nav-link text-muted subheading" href="/website">LASTIG</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about"><span class="lang-en"> About </span> <span class="lang-fr"> Présentation </span></a>
+        </li>
+	<li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#staff"><span class="lang-en"> Staff </span> <span class="lang-fr"> Membres </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#topics"><span class="lang-en"> Research Topics </span> <span class="lang-fr"> Sujets de recherche </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#news"><span class="lang-en"> News </span> <span class="lang-fr"> Actualités </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#projects"><span class="lang-en"> Projects </span> <span class="lang-fr"> Projets </span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0"> <img width="100%" src="img/titre_geovis.png" alt="Logo GeoVIS">
+        </h1>
+		<hr>
+		<div class="subheading mb-5 lang-en" align="center">
+		Research Team on Visualization, Interaction and Immersion <hr>
+		</div>
+		<div class="subheading mb-5 lang-fr" align="center">
+		Équipe de Recherche en Visualisation, Interaction et Immersion <hr>
+		</div>
+	
+        <p class="lead mb-5 lang-en"> 
+		The GeoVIS team provides geovisualization knowledge, methods and tools allowing various users to design 
+		graphic representations of spatio-temporal phenomena, and to infer spatio-temporal knowledge from the 
+		interaction with some dimensions of a phenomenon, based on spatial data (maps, imagery, 3D models, DTM, 
+		point clouds, etc.) and external data (texts, photographies, web data, thematic data, etc.). 
+		The heterogeneity (source, scale, content, precision, dimension, temporality) and the imprecision of these 
+		data and of represented phen omena imply to address the following issues: The GeoVIS team contributes in 
+		geovisualization, which encompasses cartography, GIS, InfoVis, computer graphics and image processing 
+		fields of study.
+		</p>
+        <p class="lead mb-5 lang-fr">
+		L'équipe fournit des connaissances formalisées, méthodes et outils de géovisualisation permettant à des 
+		utilisateurs variés, de concevoir des représentations graphiques de phénomènes spatio-temporels, sur 
+		lesquelles raisonner spatialement et temporellement, en leur permettant d'interagir avec une ou plusieurs 
+		dimensions du phénomène, à partir de données géographiques (cartes, imagerie, modèles 3D, modèles 
+		numériques de terrain, nuages de points, etc.) et de données externes spatialisées (textes, photographies, 
+		données du web, données thématiques, etc.). L’hétérogénéité (source, échelle, contenu, précision, 
+		dimension, temporalité) et l'imprécision de ces données comme des phénomènes représentés, impliquent de 
+		résoudre des problématiques de :
+		</p>
+		<p class="lead mb-5 lang-en"> <b> Keywords: </b> <i>to be completed...</i></p>
+        <p class="lead mb-5 lang-fr"> <b> Mots clef </b>: <i>à compléter...</i></p>
+
+        <p class="lead mb-5"> <b class="lang-fr"> Responsable de l'équipe:</b>  <b class="lang-en"> Head of the team:</b> <a href="https://umrlastig.github.io/schristophe_homepage/">Sidonie Christophe</a> </p>
+        <!--div class="social-icons">
+          <a href="#">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#">
+            <i class="ai ai-researchgate"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+          <a href="#">
+            <i class="ai ai-publons"></i>
+          </a>
+          <a href="#">
+            <i class="ai ai-orcid"></i>
+          </a>
+          <a href="#">
+            <i class="ai"><img src="img/icons/hal-b2.svg" width=45px/></i>
+          </a>
+        </div>
+      </div-->
+    </section>
+
+    <hr class="m-0">
+
+ <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="staff">
+      <div class="w-100">
+<h2 class="mb-5 lang-en">Staff</h2>
+<h2 class="mb-5 lang-fr">Membres</h2>
+<span class="lead mb-5 lang-en"> Permanent staff: </span>
+<span class="lead mb-5 lang-fr"> Membres permanents: </span>
+    <ul>
+    <li>
+	<a href="https://umrlastig.github.io/mathieu-bredif">Mathieu Brédif</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/schristophe_homepage">Sidonie Christophe</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/adevaux_homepage">Alexandre Devaux</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/laman-lelegard">Lâmân Lelégard</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/imran-lokhat">Imran Lokhat</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/guillaume-touya">Guillaume Touya</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+    </ul>
+<span class="lead mb-5 lang-en"> Temporary staff: </span>
+<span class="lead mb-5 lang-fr"> CDD: </span>
+    <ul>
+    <li>
+	<a href="https://umrlastig.github.io/sebastien-biniek">Sébastien Biniek</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/azelle-courtial">Azelle Courtial</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/Jacques-Gautier">Jacques Gautier</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/evelyn-paiz">Evelyn Paiz</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+	<li>
+	<a href="https://umrlastig.github.io/Safariallahkheili_Homepage">Qasem Safariallahkheili</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+    </ul>
+<span class="lead mb-5 lang-en"> Alumni: </span>
+<span class="lead mb-5 lang-fr"> Anciens: </span>
+<ul>
+    <li>
+	<a href="https://www.labri.fr/perso/pbiasutt/">Pierre Biasutti</a>,
+	<span class="lang-en"> ... </span> <span class="lang-fr"> ... </span>
+	</li>
+</ul>
+</ul>
+      </div>
+    </section>
+
+ <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="topics">
+      <div class="w-100">
+<h2 class="mb-5 lang-en">Research topics</h2>
+<h2 class="mb-5 lang-fr">Sujets de recherche</h2>
+
+<p align="center">
+    <img src="img/Instru/Camlight.jpg" alt="Camlight" style="height:160px;"> 
+    <img src="img/Instru/Geocube.jpg" alt="Geocube" style="height:160px;">
+</p>
+
+<p class="lead mb-5 lang-en"> In terms of <b> instrumental development </b>, the team works on the design, production and calibration of new instruments for the acquisition of metrological data making it possible to answer scientific questions / locks not taken into account by existing systems . This work, which integrates research and innovation, goes from the initial design to the development of prototypes usable by specialists. </p>
+<p class="lead mb-5 lang-fr"> En terme <b>instrumental</b>, l'équipe travaille à la conception, réalisation et calibration d'instruments nouveaux pour l'acquisition de données métrologiques permettant de répondre à des questions/verrous scientifiques non pris en compte par les systèmes existants. Ces travaux, qui intègrent recherche et innovation, vont de la conception initiale jusqu'au développement de prototypes utilisables par des spécialistes. </p>
+
+<p align="center">
+    <img src="img/Photogra/Fikri1.png" alt="Fikri1" style="height:150px;"> 
+    <img src="img/Photogra/Fikri2.png" alt="Fikri2" style="height:150px;">
+    <img src="img/Photogra/Zhou1.png" alt="Zhou1" style="height:150px;">
+    <img src="img/Photogra/Seba2.png" alt="Seba2" style="height:150px;">
+</p>
+
+<p class="lead mb-5 lang-en"> The value of geographic data comes from their <b> location </b> and their <b> interoperability </b> (with each other and with other given sources). Data <b> matching </b>, in the broadest sense, is one of the key steps to achieving these goals. The team is developing research on a wide spectrum of matching methods to advance the state of the art and make it more precise, more robust, more general. This research potentially relates to all modalities (image, Lidar, Radar) and their crossing, all points of view (satellite, aerial, drone, road, terrestrial interior and exterior), all scales and all temporalities (old data up to current). The methodological spectrum of the team research on matching covers in particular the <b> extraction of primitives </b>, the sparse pairing of these primitives, the dense (photogrammetric) matching of localized data to generate 3D modeling, 2D pairing (optical and radar) for calculating <b> distortions </b>, pairing with databases, <b> content indexing </b> for digging in large databases image data (especially historical data). </p>
+<p class="lead mb-5 lang-fr">  La valeur des données géographiques vient de leur <b>localisation</b> et de leur <b>interopérabilité</b> (entre elles et avec d'autres sources données). L'<b>appariement</b> de données, au sens le plus large, est une des étapes clé pour atteindre ces objectifs. L'équipe développe des recherches sur un vaste spectre de méthodes d'appariement pour faire progresser l'état de l'art et le rendre plus précis, plus robuste, plus général. Ces recherches portent potentiellement sur toutes les modalités (image, Lidar, Radar) et leur croisement, tous les points de vue (satellitaire, aérien, drone, routier, terrestre intérieur et extérieur), toutes les échelles et toutes les temporalités (données anciennes jusqu'à actuelles). Le spectre méthodologique des recherches de l'équipe en appariement couvre notamment l'<b>extraction de primitives</b>, l'appariement éparse de ces primitives, l'appariement dense (photogrammétrique) de données localisées pour générer des modélisation 3D, l'appariement 2D (optique et radar) pour le calcul de <b>déformations</b>, l'appariement avec des bases de données, l'<b>indexation de contenu</b> pour la fouille dans des grandes bases de données images (notamment historiques). </p>
+
+<p align="center">
+    <img src="img/Index/Poreba.png" alt="Poreba" style="height:128px;"> 
+</p>
+
+<p class="lead mb-5 lang-en"> The interpretation of the signal received in terms of information on the physics of the scene requires fine modeling of the sensor and <b> electromagnetic </b> phenomena. The team conducts research in this area on 2 aspects: </p>
+<p class="lead mb-5 lang-fr"> L'interprétation du signal re&ccedil;u en terme d'information sur la physique de la scène nécessite une modélisation fine du capteur et des phénomènes <b>électromagnétiques</b>. L'équipe mène des recherches dans ce domaine sur 2 aspects : </p>
+<ul>
+<li> <p class="lang-en"> <b> radar data analysis </b>: the objective is to better understand the sensitivity of these data with respect to the surface parameters (soil humidity and roughness, humidity, structure, and quantity of vegetation biomass, surface displacement, slopes) in order to be able to extract quantitative estimates or homogeneous classes at the landscape scale. This involves in particular studying the complementarity of the various satellite radar data in terms of wavelength, polarizations, spatial and temporal resolutions. </p>
+<p class="lang-fr"> l'<b>analyse de données radar</b>: l'objectif est de mieux comprendre la sensibilité de ces données avec les paramètres de surface (humidité et rugosité des sols, humidité, structure, et quantité de biomasse de la végétation, déplacement de surface, pentes) afin de pouvoir en extraire des estimations quantitatives ou des classes homogènes à l'échelle des paysages. Il s'agit notamment d'étudier la complémentarité des différentes données radar satellitaires en terme de longueur d'onde, polarisations, résolutions spatiale et temporelle. </p> </li>
+<li> <p class="lang-en"> <b> reflectance estimation </b> is an input for estimating the constituent materials of imaged scenes, it is approached as an inverse problem allowing to go back to optical properties of materials independently of the observation conditions (geometry of acquisition, condition of illumination or atmospheric transmission). </p>
+<p class="lang-fr"> l'<b>estimation de réflectance</b> est une entrée pour estimer les matériaux constitutifs des scènes imagées, elle est abordée comme un problème inverse permettant de remonter à des propriétés optiques des matériaux indépendamment des conditions d'observation (géométrie d'acquisition, condition d&#039;illumination ou de transmission atmosphérique). </p> </li>
+</ul>
+
+<p align="center">
+    <img src="img/Radar/Frison.png" alt="Frison" style="height:150px;"> 
+    <img src="img/Radar/Fruneau.png" alt="Fruneau" style="height:150px;">
+    <img src="img/Radio/Manchun3.png" alt="Manchun3" style="height:150px;"> 
+</p>
+
+<p class="lead mb-5 lang-en"> Once the data is georeferenced, calibrated and put in 3D, methods of information <b> structuring </b> and <b> extraction </b> must be used to enrich it and make it more compact and more manageable. The research questions are to deal with increasingly massive data sets, to qualify the transformed data (estimation of uncertainty) and, of course, to improve the quality of the results (notably for radiometry and semantization). The aspects addressed by the team include: </p>
+<p class="lead mb-5 lang-fr"> Une fois les données géoréférencées, calibrées, et mises en 3D, des méthodes de <b>structuration</b> et d'<b>extraction</b> d'information doivent être utilisées pour les enrichir et les rendre plus compactes et plus maniables. Les questions de recherche sont de traiter des jeux de données de plus en plus massifs, de qualifier les données transformées (estimation d'incertitude) et, bien sûr, d'améliorer la qualité des résultats (notamment pour la radiométrie et la sémantisation). Les aspect abordés par l'équipe incluent: </p>
+<ul>
+<li> <p class="lang-en"> 3D (mesh) surface reconstruction </p>
+<p class="lang-fr"> la <b>reconstruction de surface</b> (en particulier triangulées) 3D  </p>
+</li>
+<li> <p class="lang-en"> Structured 3D reconstruction including semantisation and levels of detail (from point cloud to geographic objects such as buildings, sidewalks, trees,...)  </p>
+<p class="lang-fr"> la <b>reconstruction structurée</b> incluant une sémantisation et potentiellement une hiérarchisation (on passe d'un nuage de points à des objets géographiques, bâtiments, trottoirs, arbres...) </p>
+ </li>
+<li> <p class="lang-en"> Surface texturing </p>
+<p class="lang-fr"> la <b>texturation</b> des surfaces </p>
+</li>
+<li> <p class="lang-en"> Change detection </p>
+<p class="lang-fr"> la <b>détection de changements</b> </p>
+ </li>
+</ul> 
+
+	<p align="center">
+		<img src="img/Reco/Caraffa.png" alt="Piasco" style="height:140px;">
+		<img src="img/Reco/Guinard.png" alt="Guinard" style="height:140px;">
+		<img src="img/Reco/Quoc.jpg" alt="Quoc" style="height:140px;">
+		<img src="img/Reco/WuTeng.png" alt="WuTeng" style="height:140px;">
+	</p>
+    </div>
+    </section>
+
+</section>
+
+    <hr class="m-0">
+
+<section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="news">
+    <div class="w-100">
+		<h2 class="mb-5 lang-en">News</h2>
+		<h2 class="mb-5 lang-fr">Actualités</h2>
+        <ul class="fa-ul mb-0">
+        <li>
+            <i class="fa-li fa fa-check-square"></i>
+			<h5> 08/11/19:
+				<span class="lang-en"> Miloud Mezian's PhD </span>
+				<span class="lang-fr"> Thèse de Miloud Mezian </span>
+			</h5>
+			<p class="lang-en"> ACTE PhD student Miloud Mezian defends his PhD thesis</p>
+			<p class="lang-fr"> Miloud Mezian, doctorant de l'équipe ACTE, soutiens sa thèse </p>
+		</li>
+	    <li>
+            <i class="fa-li fa fa-check-square"></i>
+			<h5> 06/12/19:
+				<span class="lang-en"> Yilin Zhou's PhD </span>
+				<span class="lang-fr"> Thèse de Yilin Zhou </span>
+			</h5>
+            <p class="lang-en"> ACTE PhD student Yilin Zhou defends her PhD thesis</p>
+			<p class="lang-fr"> Yilin Zhang, doctorante de l'équipe ACTE, soutiens sa thèse </p>
+		</li>
+		<li>
+            <i class="fa-li fa fa-square"></i>
+			<h5> 17/01/20:
+				<span class="lang-en"> <img src="img/icons/LOGOANR-300x122.png" alt="ANR" width=32px> BIOM project meeting </span>
+				<span class="lang-fr"> Réunion de projet <img src="img/icons/LOGOANR-300x122.png" alt="ANR" width=32px> BIOM </span>
+			</h5>
+        </li>
+        <li>
+            <i class="fa-li fa fa-square"></i>
+			<h5> 13-16/01/20: TRB 2020 </h5>
+			<p class="lang-en"> Participation at and speech on "Creating digital twins of cities: from data acquisition to 3D modeling" at the <a href="http://www.trb.org/AnnualMeeting/AnnualMeeting.aspx"> 2020 Transportation Research Board (TRB) Annual Meeting </a> </p>
+			<p class="lang-fr"> Participation et présentation donnée sur le thème "Creating digital twins of cities: from data acquisition to 3D modeling" à la réunion annuelle 2020 du <a href="http://www.trb.org/AnnualMeeting/AnnualMeeting.aspx"> Transportation Research Board (TRB) </a> </p>
+			</h5>
+        </li>
+        </ul>
+	</div>
+</section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications">
+      <div class="w-100">
+        <h2 class="mb-5">Publications</h2>
+
+        <span id="pubACL"><div class="subheading mb-3 mt-3">[ACL] Journals</div></span>
+        <span id="pubACLN"><div class="subheading mb-3 mt-3">[ACLN] Journals</div></span>
+        <span id="pubASCL"><div class="subheading mb-3 mt-3">[ASCL] Others</div></span>
+        <span id="pubACTI"><div class="subheading mb-3 mt-3">[ACTI] Conferences</div></span>
+        <span id="pubACTN"><div class="subheading mb-3 mt-3">[ACTN] Conferences</div></span>
+        <span id="pubCOM"><div class="subheading mb-3 mt-3">[COM] Conferences</div></span>
+        <span id="pubOS"><div class="subheading mb-3 mt-3">[OS] Books and Chapters</div></span>
+        <span id="pubDO"><div class="subheading mb-3 mt-3">[DO] Books and Chapters</div></span>
+        <span id="pubAFF"><div class="subheading mb-3 mt-3">[AFF] Posters</div></span>
+        <span id="pubAP"><div class="subheading mb-3 mt-3">[AP] Preprints</div></span>
+        <span id="pubTH"><div class="subheading mb-3 mt-3">[TH] Dissertations</div></span>
+        <span id="pubINV"><div class="subheading mb-3 mt-3">[INV] Invited Talks</div></span>
+        <span id="pubPV"><div class="subheading mb-3 mt-3">[PV] Popularization</div></span>
+
+        <!-- provide a subset of the publications based on a keyword -->
+        <!--
+        <span id="pubGeneralisation"><div class="subheading mb-3 mt-3">Généralisation</div></span>
+	<script> getKeywordPublicationsAuthorStartYear('guillaume-touya', 'Généralisation', 2006, "pubGeneralisation"); </script>
+        -->
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+    <div class="container">
+        <div class="row text-center title">
+	<h2 class="mb-5 lang-en">Projects</h2>
+        <h2 class="mb-5 lang-fr">Projects</h2>
+        </div>
+        <div class="subheading mb-3 lang-en">On-going and past research projects</div>
+	<div class="subheading mb-3 lang-fr">Projets en cours et passés</div>
+        <div class="row projects">
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/BIOM-Logo-small.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="https://umrlastig.github.io/biom/">BIOM</a> </h4>
+		<p class="description "> <span class="lang-en"> Building Inside/Outside Modeling </span> <span class="lang-fr"> Modélisation intérieur/extérieur de bâtiments </span> <br><img src="img/icons/fr.svg" alt="" width=16px> <b><img src="img/icons/LOGOANR-300x122.png" alt="ANR" width=32px> AAPG 2018-2021</b></p>
+            </div>
+          </div>
+	<div class="col-md-4">
+		<div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/timemachine.jpg" alt="" width=100px>
+              </div>
+              <h4 class="heading"><a href="https://www.timemachine.eu/">Time Machine</a></h4>
+              <p class="description">  <span class="lang-en"> The Big Data of the past for the Future of Europe </span> <span class="lang-fr"> Les big data du passé pour l'avenir de l'Europe </span>  <br><img src="img/icons/Europe.svg" alt="" width=24px><b> CSA H2020 2019-2020</b></p>
+            </div>
+        </div>
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/logo_ALEGORIA_75.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="http://alegoria.ign.fr">ALEGORIA</a></h4>
+              <p class="description"> <span class="lang-en"> Advanced Linking and Exploitation of diGitized geOgRaphic Iconographic heritAge </span> <span class="lang-fr"> structurAtion et vaLorisation du patrimoinE géoGraphique icOnogRaphIque démAtérialisé </span> <br><img src="img/icons/fr.svg" alt="" width=16px><b><img src="img/icons/LOGOANR-300x122.png" alt="ANR" width=32px> AAPG 2018-2021</b></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/logo_AC.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="#">Archival City</a></h4>
+              <p class="description"> <span class="lang-en"> Understanding and exploitation of urban archives </span> <span class="lang-fr"> Compréhension et exploitation des archives urbaines </span>  <br><img src="img/icons/fr.svg" alt="" width=16px><b>Tremplin i-Site FUTURE 2019-2023 </b></p>
+              <p class="description lang-fr">  <br><img src="img/icons/fr.svg" alt="" width=16px><b>Tremplin de l'i-Site FUTURE 2019-2023 </b></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/logo_Platinum.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="http://platinum.projets.litislab.fr">pLaTINUM</a></h4>
+              <p class="description"> <span class="lang-en"> Long Term MappINg for Urban Mobility </span> <span class="lang-fr"> Cartographie à long terme pour la mobilité urbaine </span>  <br><img src="img/icons/fr.svg" alt="" width=16px><b> <img src="img/icons/LOGOANR-300x122.png" alt="ANR" width=32px> AAPG 2015-2019 </b></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/logo_Things2Do.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="http://things2do.space.com.ro">Thing2Do</a></h4>
+              <p class="description"> THIN but Great Silicon 2 Design Objects <br><img src="img/icons/Europe.svg" alt="" width=24px><b>H2020 Ket ENIAC 2014-2018</b></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/logo_POEME.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="https://anr.fr/en/funded-projects-and-impact/funded-projects/project/funded/project/b2d9d3668f92a3b9fbbf7866072501ef-37f3473a5f/?tx_anrprojects_funded%5Bcontroller%5D=Funded&cHash=eb327f02768110addefb0c44c33147ae">POEME</a></h4>
+              <p class="description"> <span class="lang-en"> Photographic cOntents Exploration through iMmersive Environment </span> <span class="lang-fr"> Exploration de contenus photographiques à travers des environnements immersifs </span> <br><img src="img/icons/fr.svg" alt="" width=16px><b> <img src="img/icons/LOGOANR-300x122.png" alt="ANR" width=32px> CONTINT 2013-2016</b></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/logo_DESCRIBE.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="https://anr.fr/en/funded-projects-and-impact/funded-projects/project/funded/project/b2d9d3668f92a3b9fbbf7866072501ef-65b18baae8/?tx_anrprojects_funded%5Bcontroller%5D=Funded&cHash=a550abd0d0a463382f8a54b12ccfea0d">DESCRiBE</a></h4>
+              <p class="description"> <span class="lang-en"> Online event detection in video sequences using structural and Bayesian approaches </span> <span class="lang-fr"> Détection d'évènement en ligne dans les séquences vidéo à partir d'approches structurelles et bayésiennes </span> <br><img src="img/icons/fr.svg" alt="" width=16px> <img src="img/icons/LOGOANR-300x122.png" alt="ANR" width=32px> <b>ASTRID 2013-2015</b></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/logo_Terramobilita.png" alt="" width=150px>
+              </div>
+              <h4 class="heading"><a href="http://www.terramobilita.fr">Terra Mobilita</a></h4>
+              <p class="description"> <span class="lang-en"> 3D mapping of urban roads and public spaces, accessibility and soft traffic </span> <span class="lang-fr"> Cartographie 3D de la voirie et de l’espace public urbains, accessibilité et circulations douces </span>   <br><img src="img/icons/fr.svg" alt="" width=16px><b> FUI 2011-2015</b></p>
+            </div>
+          </div>
+	<div class="col-md-4">
+            <div class="project">
+              <div class="icon-holder">
+                <img src="img/icons/volta.jpg" alt="" width=150px>
+              </div>
+              <h4 class="heading"> <a href="https://volta.fbk.eu/">Volta</a> </h4>
+		<p class="description"> <span class="lang-en"> innoVation in geOspatiaL and 3D daTA </span> <span class="lang-fr"> Innovation en données géospatiales </span><br><img src="img/icons/Europe.svg" alt="" width=24px><b> EU MSC RISE H2020</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cut cut-bottom"></div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/jquery.isotope.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.js"></script>
+
+</body>
+
+</html>
