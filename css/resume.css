@@ -192,11 +192,11 @@ a:hover, a:focus, a:active {
   color: #824027;
 }
 
-b {
+.b {
   font-weight: bolder;
 }
 
-i {
+.i {
   font-style : italic;
 }
 
