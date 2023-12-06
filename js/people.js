@@ -21,48 +21,47 @@
 // THE SOFTWARE.
 
 // this file contains functions to handle the people.csv file of the members of LASTIG
-	function parsePeopleCSVfile(team) {
-		// Open a new connection, using the GET request on the URL endpoint
-		var url = "/lastig_data/people.csv";
-		// var url = "http://localhost/lastig/lastig_data/people.csv";
+function parsePeopleCSVfile(team) {
+	// Open a new connection, using the GET request on the URL endpoint
+	var url = "/lastig_data/people.csv";
+	// var url = "http://localhost/lastig/lastig_data/people.csv";
 
-		var myInit = { method: 'GET'};
-		fetch(url,myInit)
-		.then(function(response) {
-			return response.ok ? response.text() : Promise.reject(response.status);
-		})
-		.then(function(text) {
-			var data = Papa.parse(text, {
-				download: false,
-				header: true,
-				step: function(row) {
-					if(row.data[0].firstname.localeCompare("") != 0){
-						if(row.data[0].team == team && row.data[0].member == 'true'){
-							var parent = document.getElementById("permanent-container");
-							if(row.data[0].status == 'PhD student' || row.data[0].status == 'Post-doc'){
-								var parent = document.getElementById("non-permanent-container");
-							}
-							if (row.data[0].end_date != ''){
-								var d1 = new Date();
-								var d2 = new Date(row.data[0].end_date);
-								if (d2.getTime() < d1.getTime()) {
-									var parent = document.getElementById("alumni-container");
-								}
-							}
-							divForAllPeople(parent, row.data);}
+	var myInit = { method: 'GET'};
+	fetch(url,myInit)
+	.then(function(response) {
+		return response.ok ? response.text() : Promise.reject(response.status);
+	})
+	.then(function(text) {
+		var data = Papa.parse(text, {
+			download: false,
+			header: true,
+			step: function(row) {
+				if(row.data[0].firstname.localeCompare("") != 0){
+					if(row.data[0].team == team && row.data[0].member == 'true'){
+						var parent = document.getElementById("permanent-container");
+						if(row.data[0].status == 'PhD student' || row.data[0].status == 'Post-doc'){
+							var parent = document.getElementById("non-permanent-container");
 						}
-					},
-				complete: function() {
-					var classes = [".lang-fr", ".lang-en"];
-        			var lang = document.getElementById('select-lang').selectedIndex;
-					$( classes[lang] ).hide();
-					console.log("All done for people!");
-				},
-					worker: true
-				});
-			return data;
-		})
-	        .then(function() { $("select-lang").selectpicker(); });
+						if (row.data[0].end_date != ''){
+							var d1 = new Date();
+							var d2 = new Date(row.data[0].end_date);
+							if (d2.getTime() < d1.getTime()) {
+								var parent = document.getElementById("alumni-container");
+							}
+						}
+						console.log(row.data[0].lastname);
+						divForAllPeople(parent, row.data);
+					}
+				}
+			},
+			complete: function() {
+				console.log("All done for people!");
+			},
+			worker: true
+		});
+		return data;
+	})
+        .then(function() { $("select-lang").selectpicker(); });
   };
 
   function divForAllPeople(parentElement, data) {
@@ -80,9 +79,9 @@
 
 	aElement = document.createElement('a');
 	aElement.setAttribute("href", data[0].webpage);
-	nameElement = document.createElement('h5');
+	nameElement = document.createElement('span');
 	nameElement.innerHTML = data[0].firstname +" "+ data[0].lastname;
-	nameElement.setAttribute("class","font-weight-bold mt-4 mb-3");
+	nameElement.setAttribute("class","mt-4 mb-3");
 	aElement.append(nameElement);
 	appendChildElement.appendChild(aElement);
 	statusElement = document.createElement('p');
