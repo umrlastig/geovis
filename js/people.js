@@ -37,7 +37,7 @@ function parsePeopleCSVfile(team) {
 			header: true,
 			step: function(row) {
 				if(row.data[0].firstname.localeCompare("") != 0){
-					if(row.data[0].team == team && row.data[0].member == 'true'){
+					if(row.data[0].team == team){
 						var parent = document.getElementById("permanent-container");
 						if(row.data[0].status == 'PhD student' || row.data[0].status == 'Post-doc'){
 							var parent = document.getElementById("non-permanent-container");
