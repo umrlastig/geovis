@@ -60,7 +60,7 @@
       appendAvatarDivElement.setAttribute("class","img-member");
       imgElement = document.createElement('img');
       imgElement.setAttribute("class","rounded-circle z-depth-1");
-      imgElement.setAttribute("src",data[0].photo);
+	    imgElement.setAttribute("src",data[0].photo || '/lastig_data/img/abstract-user-icon.svg');
       imgElement.setAttribute("alt","");
       appendImgElement = appendAvatarDivElement.appendChild(imgElement);
 
