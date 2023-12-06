@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 // this file contains functions to handle the people.csv file of the members of LASTIG
-	function parsePeopleCSVfile() {
+	function parsePeopleCSVfile(team) {
 		// Open a new connection, using the GET request on the URL endpoint
 		var url = "/lastig_data/people.csv";
 		// var url = "http://localhost/lastig/lastig_data/people.csv";
@@ -37,7 +37,7 @@
 				header: true,
 				step: function(row) {
 					if(row.data[0].firstname.localeCompare("") != 0){
-						if(row.data[0].team == "ACTE" && row.data[0].member == 'true'){
+						if(row.data[0].team == team && row.data[0].member == 'true'){
 							var parent = document.getElementById("permanent-container");
 							if(row.data[0].status == 'PhD student' || row.data[0].status == 'Post-doc'){
 								var parent = document.getElementById("non-permanent-container");
@@ -96,6 +96,6 @@
 	//appendChildElement.innerHTML = data[0].status;
   };
 
-var displayPeople = function(){
-    var data = parsePeopleCSVfile();
+var displayPeople = function(team){
+    var data = parsePeopleCSVfile(team);
 };
