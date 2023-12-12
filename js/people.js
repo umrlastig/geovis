@@ -21,68 +21,80 @@
 // THE SOFTWARE.
 
 // this file contains functions to handle the people.csv file of the members of LASTIG
-  function parsePeopleCSVfile(lang) {
-    var request = new XMLHttpRequest();
+function parsePeopleCSVfile(team) {
+	// Open a new connection, using the GET request on the URL endpoint
+	var url = "/lastig_data/people.csv";
+	// var url = "http://localhost/lastig/lastig_data/people.csv";
 
-    // Open a new connection, using the GET request on the URL endpoint
-    var url = "https://raw.githubusercontent.com/umrlastig/lastig_data/master/people.csv";
-    request.open('GET', url, true);
-    request.onload = function () {
-      var data = Papa.parse(this.response, {
-                    download: false,
-                    header: true,
-                    step: function(row) {
-                        //console.log("Row:", row.data);
-                        if(row.data[0].firstname.localeCompare("") != 0){
-                          var parentCur = document.getElementById("people-container");
-                          var parentOld = document.getElementById("people-container-past");
-                          divForTeamPeople(lang, parentCur, parentOld, row.data);}
-                    },
-                    complete: function() {
-                        console.log("All done!");
-                    }
-                });
-      return data;
-    };
-
-    request.send();
+	var myInit = { method: 'GET'};
+	fetch(url,myInit)
+	.then(function(response) {
+		return response.ok ? response.text() : Promise.reject(response.status);
+	})
+	.then(function(text) {
+		var data = Papa.parse(text, {
+			download: false,
+			header: true,
+			step: function(row) {
+				if(row.data[0].firstname.localeCompare("") != 0){
+					if(row.data[0].team == team){
+						var parent = document.getElementById("permanent-container");
+						if(row.data[0].status == 'PhD student' || row.data[0].status == 'Post-doc'){
+							var parent = document.getElementById("non-permanent-container");
+						}
+						if (row.data[0].end_date != ''){
+							var d1 = new Date();
+							var d2 = new Date(row.data[0].end_date);
+							if (d2.getTime() < d1.getTime()) {
+								var parent = document.getElementById("alumni-container");
+							}
+						}
+						console.log(row.data[0].lastname);
+						divForAllPeople(parent, row.data);
+					}
+				}
+			},
+			complete: function() {
+				console.log("All done for people!");
+			},
+			worker: true
+		});
+		return data;
+	})
+        .then(function() { $("select-lang").selectpicker(); });
   };
 
-  function divForTeamPeople(lang, parentCur, parentOld, data) {
-    if(data[0].team=="GEOVIS"){
-      const childElement = document.createElement('div');
-      const parentElement = data[0].end_date == '' ? parentCur : parentOld;
-      if (!parentElement) return;
-      const appendChildElement = parentElement.appendChild(childElement);
-      appendChildElement.setAttribute("class","col-lg-2 col-md-6 mb-lg-0 mb-5");
-      avatarDivElement = document.createElement('div');
-      const appendAvatarDivElement = appendChildElement.appendChild(avatarDivElement);
-      appendAvatarDivElement.setAttribute("class","img-member");
-      imgElement = document.createElement('img');
-      imgElement.setAttribute("class","rounded-circle z-depth-1");
-      imgElement.setAttribute("src",data[0].photo);
-      imgElement.setAttribute("alt","");
-      appendImgElement = appendAvatarDivElement.appendChild(imgElement);
+  function divForAllPeople(parentElement, data) {
+	const childElement = document.createElement('div');
+	const appendChildElement = parentElement.appendChild(childElement);
+	appendChildElement.setAttribute("class","people col-lg-2 col-md-6 mb-lg-0 mb-5");
+	avatarDivElement = document.createElement('div');
+	const appendAvatarDivElement = appendChildElement.appendChild(avatarDivElement);
+	appendAvatarDivElement.setAttribute("class","avatar mx-auto img-member");
+	imgElement = document.createElement('img');
+	imgElement.setAttribute("class","rounded-circle z-depth-1");
+	imgElement.setAttribute("src",data[0].photo || '/lastig_data/img/abstract-user-icon.svg');
+	imgElement.setAttribute("alt","");
+	appendImgElement = appendAvatarDivElement.appendChild(imgElement);
 
-      aElement = document.createElement('a');
-      aElement.setAttribute("href", data[0].webpage);
-      nameElement = document.createElement('h5');
-      nameElement.innerHTML = data[0].firstname +" "+ data[0].lastname;
-      nameElement.setAttribute("class","font-weight-bold mt-4 mb-3");
-      aElement.append(nameElement);
-      appendChildElement.appendChild(aElement);
-      statusElement = document.createElement('p');
-      statusElement.innerHTML = lang == 'fr' ? data[0].statut : data[0].status;
-      statusElement.setAttribute("class","text blue-text");
-      appendChildElement.appendChild(statusElement);
-    //appendChildElement.innerHTML = data[0].status;
-    }
+	aElement = document.createElement('a');
+	aElement.setAttribute("href", data[0].webpage);
+	nameElement = document.createElement('span');
+	nameElement.innerHTML = data[0].firstname +" "+ data[0].lastname;
+	nameElement.setAttribute("class","mt-4 mb-3");
+	aElement.append(nameElement);
+	appendChildElement.appendChild(aElement);
+	statusElement = document.createElement('p');
+	statusElement.innerHTML = data[0].status;
+	statusElement.setAttribute("class","text blue-text text-status lang-en");
+	appendChildElement.appendChild(statusElement);
+	statutElement = document.createElement('p');
+	statutElement.innerHTML = data[0].statut;
+	statutElement.setAttribute("class","text blue-text text-status lang-fr");
+	appendChildElement.appendChild(statutElement);
+	//appendChildElement.innerHTML = data[0].status;
   };
 
-var displayPeople = function(){
-  var data = parsePeopleCSVfile('en');
-};
-
-var displayPeopleFr = function(){
-  var data = parsePeopleCSVfile('fr');
+var displayPeople = function(team){
+    var data = parsePeopleCSVfile(team);
 };

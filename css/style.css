@@ -1638,3 +1638,10 @@ h5,
   width: 60px;
   height: 60px;
 }
+
+.people{
+  display: inline-table;
+  height:auto;
+  text-align:center;
+}
+
