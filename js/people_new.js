@@ -54,7 +54,8 @@ function parsePeopleCSVfile(team) {
                 }
               }
               console.log(row.data[0].lastname);
-              divForAllPeople(parent, row.data);
+              // divForAllPeople(parent, row.data);
+              createPeopleDiv(parent, row.data);
             }
           }
         },
@@ -85,7 +86,8 @@ function divForAllPeople(parentElement, data) {
   imgElement.setAttribute("class", "rounded-circle z-depth-1");
   imgElement.setAttribute(
     "src",
-    data[0].photo || "/lastig_data/img/abstract-user-icon.svg"
+    "https://www.umr-lastig.fr" + data[0].photo ||
+      "https://www.umr-lastig.fr/lastig_data/img/abstract-user-icon.svg"
   );
   imgElement.setAttribute("alt", "");
   appendImgElement = appendAvatarDivElement.appendChild(imgElement);
@@ -106,6 +108,53 @@ function divForAllPeople(parentElement, data) {
   statutElement.setAttribute("class", "text blue-text text-status lang-fr");
   appendChildElement.appendChild(statutElement);
   //appendChildElement.innerHTML = data[0].status;
+}
+
+function createPeopleDiv(parentElement, data) {
+  const childElement = document.createElement("div");
+  parentElement.appendChild(childElement);
+  childElement.setAttribute("class", "col-lg-2 col-md-6");
+  let avatarDivElement = document.createElement("div");
+  childElement.appendChild(avatarDivElement);
+  avatarDivElement.setAttribute("class", "row");
+  //appendAvatarDivElement.setAttribute("class", "avatar mx-auto img-member");
+  let colImage = document.createElement("div");
+  colImage.setAttribute("class", "col");
+  avatarDivElement.appendChild(colImage);
+  let imgElement = document.createElement("img");
+  // imgElement.setAttribute("class", "rounded-circle z-depth-1 ");
+  imgElement.setAttribute("class", "rounded-circle");
+  if (data[0].photo == "") {
+    imgElement.setAttribute(
+      "src",
+      "https://www.umr-lastig.fr/lastig_data/img/abstract-user-icon.svg"
+    );
+  } else {
+    imgElement.setAttribute("src", "https://www.umr-lastig.fr" + data[0].photo);
+  }
+  colImage.appendChild(imgElement);
+
+  nameRow = document.createElement("div");
+  nameRow.setAttribute("class", "row");
+  aElement = document.createElement("a");
+  aElement.setAttribute("href", data[0].webpage);
+  nameElement = document.createElement("span");
+  nameElement.innerHTML = data[0].firstname + " " + data[0].lastname;
+  nameElement.setAttribute("class", "mt-4 mb-3");
+  aElement.append(nameElement);
+  nameRow.appendChild(aElement);
+  childElement.appendChild(nameRow);
+
+  statusRow = document.createElement("div");
+  statusRow.setAttribute("class", "row");
+  statusElement = document.createElement("p");
+  statusElement.innerHTML = data[0].status;
+  statusElement.setAttribute("class", "text blue-text text-status lang-en");
+  childElement.appendChild(statusElement);
+  // statutElement = document.createElement("p");
+  // statutElement.innerHTML = data[0].statut;
+  // statutElement.setAttribute("class", "text blue-text text-status lang-fr");
+  // appendChildElement.appendChild(statutElement);
 }
 
 var displayPeople = function (team) {
