@@ -26,6 +26,7 @@ let enLink = document.getElementById("en-link");
 
 frLink.addEventListener("click", function () {
   frLink.classList.add("active");
+  enLink.classList.remove("active");
   document.querySelectorAll(".lang-fr").forEach(function (element) {
     element.style.display = "block";
   });
@@ -35,6 +36,8 @@ frLink.addEventListener("click", function () {
 });
 
 enLink.addEventListener("click", function () {
+  enLink.classList.add("active");
+  frLink.classList.remove("active");
   document.querySelectorAll(".lang-en").forEach(function (element) {
     element.style.display = "block";
   });

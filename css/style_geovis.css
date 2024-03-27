@@ -51,3 +51,12 @@ a:focus,
 a:active {
   color: #824027;
 }
+
+.image-title {
+  margin-bottom: 8px;
+  margin-left: -10px;
+}
+
+.intro {
+  font-size: 1.1rem;
+}
