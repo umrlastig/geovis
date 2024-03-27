@@ -10,6 +10,13 @@
   height: 60px;
 }
 
+.thumb1 {
+  border-radius: 50% !important;
+  object-fit: cover;
+  width: 100px;
+  height: 110px;
+}
+
 .carousel-item img {
   object-fit: cover;
   object-position: center;
@@ -59,4 +66,8 @@ a:active {
 
 .intro {
   font-size: 1.1rem;
+}
+
+html {
+  scroll-padding-top: 100px;
 }
