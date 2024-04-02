@@ -325,6 +325,9 @@ function getPublicationsGeovis() {
     "sidonie-christophe",
     "laman-lelegard",
     "alexandredevaux",
+    "laura-wenclik",
+    "maieul-gruget",
+    "berence-le-mao",
   ];
   //for (let i = 0; i < hal_ids.length; i++) {
   // fetchHal(hal_ids[i], "", {

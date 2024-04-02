@@ -123,7 +123,8 @@ function createPeopleDiv(parentElement, data) {
   avatarDivElement.appendChild(colImage);
   let imgElement = document.createElement("img");
   // imgElement.setAttribute("class", "rounded-circle z-depth-1 ");
-  imgElement.setAttribute("class", "rounded-circle");
+  //imgElement.setAttribute("class", "rounded-circle");
+  imgElement.setAttribute("class", "thumb1");
   if (data[0].photo == "") {
     imgElement.setAttribute(
       "src",
