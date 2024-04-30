@@ -71,3 +71,12 @@ a:active {
 html {
   scroll-padding-top: 100px;
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(100%);
+}
+
+.title-section {
+  margin-top: 50px;
+}
