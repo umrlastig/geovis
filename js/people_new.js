@@ -67,7 +67,7 @@ function parsePeopleCSVfile(team) {
       return data;
     })
     .then(function () {
-      $("select-lang").selectpicker();
+     // $("select-lang").selectpicker(); // removed, as $ is not imported
     });
 }
 
@@ -125,14 +125,9 @@ function createPeopleDiv(parentElement, data) {
   // imgElement.setAttribute("class", "rounded-circle z-depth-1 ");
   //imgElement.setAttribute("class", "rounded-circle");
   imgElement.setAttribute("class", "thumb1");
-  if (data[0].photo == "") {
-    imgElement.setAttribute(
-      "src",
-      "https://www.umr-lastig.fr/lastig_data/img/abstract-user-icon.svg"
-    );
-  } else {
-    imgElement.setAttribute("src", "https://www.umr-lastig.fr" + data[0].photo);
-  }
+  const id = (data[0].HAL || (data[0].firstname+'-'+data[0].lastname).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(' ','-'));
+  imgElement.setAttribute("src", "https://www.umr-lastig.fr/lastig_data/user/"+(id.toLowerCase())+".jpg");
+  imgElement.setAttribute("onerror","this.src='https://www.umr-lastig.fr/lastig_data/img/abstract-user-icon.svg';");
   colImage.appendChild(imgElement);
 
   nameRow = document.createElement("div");
@@ -159,5 +154,5 @@ function createPeopleDiv(parentElement, data) {
 }
 
 var displayPeople = function (team) {
-  var data = parsePeopleCSVfile(team);
+  parsePeopleCSVfile(team);
 };
